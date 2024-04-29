@@ -6,13 +6,13 @@ import vuetify from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
   app: {
     head: {
-      titleTemplate: '%s - NuxtJS Admin Template',
-      title: 'Materio',
+      titleTemplate: '%s',
+      title: 'Wave Cockpit',
 
       link: [{
         rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico',
+        type: 'image/png',
+        href: '/favicon.png',
       }],
     },
   },

@@ -1,1 +1,17 @@
 // Write your overrides
+@use "@configured-variables" as variables;
+
+
+.nav-wave-support-info {
+  margin-block: 0;
+  margin-inline: variables.$vertical-nav-horizontal-spacing;
+  padding-block: 0;
+  padding-inline: variables.$vertical-nav-horizontal-padding;
+  margin: 1rem 0 2rem;
+  white-space: nowrap;
+}
+
+.nav-wave-support-icon {
+  flex-shrink: 0;
+  font-size: 4rem;
+}

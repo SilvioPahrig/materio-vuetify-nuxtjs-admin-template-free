@@ -2,154 +2,76 @@
 import VerticalNavSectionTitle from '@/@layouts/components/VerticalNavSectionTitle.vue'
 import VerticalNavGroup from '@layouts/components/VerticalNavGroup.vue'
 import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
+import serviceIcon from '@images/wave/customer-service-72.svg?raw'
 </script>
 
 <template>
-  <!-- 👉 Dashboards -->
-  <VerticalNavGroup
+  <div class="nav-wave-support-info">
+    <div
+      class="d-flex align-content-center align-center justify-center nav-wave-support-icon"
+      v-html="serviceIcon"
+    />
+    <div class="text-center">
+      WAVE Service-Center<br/>
+      Sie haben Fragen?<br/>
+      Kontaktieren Sie uns!
+    </div>
+    <div class="text-center text-primary">+ 49 (0)931 7801150</div>
+    <div class="text-center text-primary">info@erfolg-fuer-apotheken.de</div>
+  </div>
+
+  <!-- aktuelles -->
+  <VerticalNavSectionTitle
     :item="{
-      title: 'Dashboards',
-      badgeContent: '5',
-      badgeClass: 'bg-error',
-      icon: 'ri-home-smile-line',
+      heading: 'Aktuelles',
     }"
-  >
+  />
+  <VerticalNavLink
+    :item="{
+      title: 'Dashboard',
+      icon: 'ri-layout-masonry-line',
+      to: '/dashboard',
+      badgeClass: '',
+    }"
+  />
+  <VerticalNavLink
+    :item="{
+      title: 'Neuigkeiten',
+      icon: 'ri-info-i',
+      to: '/account-settings',
+      badgeClass: 'bg-error',
+      badgeContent: '17',
+    }"
+  />
+  <VerticalNavLink
+    :item="{
+      title: 'Pinboard',
+      icon: 'ri-file-search-line',
+      to: '/account-settings',
+      badgeClass: '',
+    }"
+  />
+
+  <!-- Meine Produkte -->
+  <VerticalNavSectionTitle
+    :item="{
+      heading: 'Meine Produkte',
+    }"
+  />
+
+  <!-- orginal -->
+  <VerticalNavSectionTitle
+    :item="{
+      heading: 'Beispiele',
+    }"
+  />
+  <!-- 👉 Dashboards -->
     <VerticalNavLink
       :item="{
         title: 'Analytics',
-        to: '/dashboard',
+        to: '/dashboard2',
       }"
     />
-    <VerticalNavLink
-      :item="{
-        title: 'CRM',
-        href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/dashboards/crm',
-        target: '_blank',
-        badgeContent: 'Pro',
-        badgeClass: 'bg-light-primary text-primary',
-      }"
-    />
-    <VerticalNavLink
-      :item="{
-        title: 'ECommerce',
-        href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/dashboards/ecommerce',
-        target: '_blank',
-        badgeContent: 'Pro',
-        badgeClass: 'bg-light-primary text-primary',
-      }"
-    />
-    <VerticalNavLink
-      :item="{
-        title: 'Academy',
-        href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/dashboards/academy',
-        target: '_blank',
-        badgeContent: 'Pro',
-        badgeClass: 'bg-light-primary text-primary',
-      }"
-    />
-    <VerticalNavLink
-      :item="{
-        title: 'Logistics',
-        href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/dashboards/logistics',
-        target: '_blank',
-        badgeContent: 'Pro',
-        badgeClass: 'bg-light-primary text-primary',
-      }"
-    />
-  </VerticalNavGroup>
-
-  <!-- 👉 Front Pages -->
-  <VerticalNavGroup
-    :item="{
-      title: 'Front Pages',
-      icon: 'ri-file-copy-line',
-      badgeContent: 'Pro',
-      badgeClass: 'bg-light-primary text-primary',
-    }"
-  >
-    <VerticalNavLink
-      :item="{
-        title: 'Landing',
-        href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/front-pages/landing-page',
-        target: '_blank',
-      }"
-    />
-    <VerticalNavLink
-      :item="{
-        title: 'Pricing',
-        href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/front-pages/pricing',
-        target: '_blank',
-      }"
-    />
-    <VerticalNavLink
-      :item="{
-        title: 'Payment',
-        href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/front-pages/payment',
-        target: '_blank',
-      }"
-    />
-    <VerticalNavLink
-      :item="{
-        title: 'Checkout',
-        href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/front-pages/checkout',
-        target: '_blank',
-      }"
-    />
-    <VerticalNavLink
-      :item="{
-        title: 'Help Center',
-        href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/front-pages/help-center',
-        target: '_blank',
-      }"
-    />
-  </VerticalNavGroup>
-
-  <!-- 👉 Apps & Pages -->
-  <VerticalNavSectionTitle
-    :item="{
-      heading: 'Apps & Pages',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
-      title: 'Permissions',
-      icon: 'ri-lock-2-line',
-      href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/apps/permissions',
-      target: '_blank',
-      badgeContent: 'Pro',
-      badgeClass: 'bg-light-primary text-primary',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
-      title: 'Email',
-      icon: 'ri-mail-line',
-      href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/apps/email',
-      target: '_blank',
-      badgeContent: 'Pro',
-      badgeClass: 'bg-light-primary text-primary',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
-      title: 'Chat',
-      icon: 'ri-wechat-line',
-      href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/apps/chat',
-      target: '_blank',
-      badgeContent: 'Pro',
-      badgeClass: 'bg-light-primary text-primary',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
-      title: 'Calendar',
-      icon: 'ri-calendar-line',
-      href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/apps/calendar',
-      target: '_blank',
-      badgeContent: 'Pro',
-      badgeClass: 'bg-light-primary text-primary',
-    }"
-  />
 
   <VerticalNavLink
     :item="{
@@ -173,20 +95,6 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
       to: '/register',
     }"
   />
-
-  <!-- 👉 User Interface -->
-  <VerticalNavSectionTitle
-    :item="{
-      heading: 'User Interface',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
-      title: 'Typography',
-      icon: 'ri-text',
-      to: '/typography',
-    }"
-  />
   <VerticalNavLink
     :item="{
       title: 'Icons',
@@ -201,13 +109,6 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
       to: '/cards',
     }"
   />
-
-  <!-- 👉 Forms & Tables -->
-  <VerticalNavSectionTitle
-    :item="{
-      heading: 'Forms & Tables',
-    }"
-  />
   <VerticalNavLink
     :item="{
       title: 'Form Layouts',
@@ -217,62 +118,9 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
   />
   <VerticalNavLink
     :item="{
-      title: 'Form Validation',
-      icon: 'ri-checkbox-multiple-line',
-      href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/forms/form-validation',
-      target: '_blank',
-      badgeContent: 'Pro',
-      badgeClass: 'bg-light-primary text-primary',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
-      title: 'Form Wizard',
-      icon: 'ri-git-commit-line',
-      href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/forms/form-wizard-numbered',
-      target: '_blank',
-      badgeContent: 'Pro',
-      badgeClass: 'bg-light-primary text-primary',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
       title: 'Tables',
       icon: 'ri-table-alt-line',
       to: '/tables',
-    }"
-  />
-
-  <!-- 👉 Others -->
-  <VerticalNavSectionTitle
-    :item="{
-      heading: 'Others',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
-      title: 'Access Control',
-      icon: 'ri-shield-line',
-      href: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1/access-control',
-      target: '_blank',
-      badgeContent: 'Pro',
-      badgeClass: 'bg-light-primary text-primary',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
-      title: 'Documentation',
-      icon: 'ri-article-line',
-      href: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation/',
-      target: '_blank',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
-      title: 'Raise Support',
-      href: 'https://github.com/themeselection/materio-vuetify-nuxtjs-admin-template-free/issues',
-      icon: 'ri-lifebuoy-line',
-      target: '_blank',
     }"
   />
 </template>
