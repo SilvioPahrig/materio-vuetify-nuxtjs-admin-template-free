@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
-import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 
-import logo from '@images/logo.svg?raw'
+import logo from '@images/wave/logo.png'
+import bg from '@images/wave/wave-bg.jpg'
 import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
 import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
 import authV1Tree2 from '@images/pages/auth-v1-tree-2.png'
@@ -38,21 +38,21 @@ definePageMeta({ layout: 'blank' })
       <VCardItem class="justify-center">
         <template #prepend>
           <div class="d-flex">
-            <div v-html="logo" />
+            <img
+              :src="logo"
+              alt="Wave"
+              height="45px"
+            />
           </div>
         </template>
-
-        <VCardTitle class="font-weight-semibold text-2xl text-uppercase">
-          Materio
-        </VCardTitle>
       </VCardItem>
 
       <VCardText class="pt-2">
         <h5 class="text-h5 font-weight-semibold mb-1">
-          Welcome to Materio! 👋🏻
+          Login
         </h5>
         <p class="mb-0">
-          Please sign-in to your account and start the adventure
+          Bitte loggen Sie sich mit Ihren persönlichen Zugangsdaten ein.
         </p>
       </VCardText>
 
@@ -63,8 +63,7 @@ definePageMeta({ layout: 'blank' })
             <VCol cols="12">
               <VTextField
                 v-model="form.email"
-                label="Email"
-                type="email"
+                label="Nutzername / bei Erstlogin IDF (BtM-Nummer)"
               />
             </VCol>
 
@@ -103,59 +102,12 @@ definePageMeta({ layout: 'blank' })
                 Login
               </VBtn>
             </VCol>
-
-            <!-- create account -->
-            <VCol
-              cols="12"
-              class="text-center text-base"
-            >
-              <span>New on our platform?</span>
-              <NuxtLink
-                class="text-primary ms-2"
-                to="/register"
-              >
-                Create an account
-              </NuxtLink>
-            </VCol>
-
-            <VCol
-              cols="12"
-              class="d-flex align-center"
-            >
-              <VDivider />
-              <span class="mx-4">or</span>
-              <VDivider />
-            </VCol>
-
-            <!-- auth providers -->
-            <VCol
-              cols="12"
-              class="text-center"
-            >
-              <AuthProvider />
-            </VCol>
           </VRow>
         </VForm>
       </VCardText>
     </VCard>
+    <div class="auth-footer-mask fill-height fill-width d-none d-md-block" :style="{ backgroundImage: 'url(' + bg + ')', backgroundSize: 'cover' }"></div>
 
-    <VImg
-      class="auth-footer-start-tree d-none d-md-block"
-      :src="authV1Tree"
-      :width="250"
-    />
-
-    <VImg
-      :src="authV1Tree2"
-      class="auth-footer-end-tree d-none d-md-block"
-      :width="350"
-    />
-
-    <!-- bg img -->
-    <VImg
-      class="auth-footer-mask d-none d-md-block"
-      :src="authThemeMask"
-    />
   </div>
 </template>
 
