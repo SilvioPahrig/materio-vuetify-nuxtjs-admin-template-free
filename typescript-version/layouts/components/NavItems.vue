@@ -38,7 +38,7 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
     :item="{
       title: 'Neuigkeiten',
       icon: 'ri-info-i',
-      to: '/account-settings',
+      to: '/news',
       badgeClass: 'bg-error',
       badgeContent: '17',
     }"
@@ -47,7 +47,7 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
     :item="{
       title: 'Pinboard',
       icon: 'ri-file-search-line',
-      to: '/account-settings',
+      to: '/pinboard',
       badgeClass: '',
     }"
   />
