@@ -58,6 +58,60 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
       heading: 'Meine Produkte',
     }"
   />
+  <VerticalNavLink
+    :item="{
+        title: 'Shop',
+        icon: 'ri-shopping-cart-2-line',
+      }"
+  />
+  <VerticalNavLink
+    :item="{
+        title: 'Website',
+        icon: 'ri-macbook-line',
+      }"
+  />
+  <VerticalNavLink
+    :item="{
+        title: 'Newsletter',
+        icon: 'ri-mail-line',
+      }"
+  />
+  <VerticalNavLink
+    :item="{
+        title: 'Chat',
+        icon: 'ri-message-2-line',
+      }"
+  />
+  <VerticalNavLink
+    :item="{
+        title: 'Impfzentrum',
+        icon: 'ri-syringe-line',
+      }"
+  />
+  <VerticalNavLink
+    :item="{
+        title: 'Aktionen / Events',
+        icon: 'ri-calendar-event-line',
+      }"
+  />
+  <VerticalNavLink
+    :item="{
+        title: 'Telepharmazie',
+        icon: 'ri-live-line',
+      }"
+  />
+  <VerticalNavLink
+    :item="{
+        title: 'Stellenangebote',
+        icon: 'ri-news-line',
+      }"
+  />
+  <VerticalNavLink
+    :item="{
+        title: 'Care',
+        icon: 'ri-wheelchair-line',
+      }"
+  />
 
   <!-- orginal -->
   <VerticalNavSectionTitle
@@ -65,6 +119,7 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
       heading: 'Beispiele',
     }"
   />
+
   <!-- 👉 Dashboards -->
     <VerticalNavLink
       :item="{
