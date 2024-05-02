@@ -75,7 +75,7 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
 
   <VerticalNavLink
     :item="{
-      title: 'Account Settings',
+      title: 'Mein Profil',
       icon: 'ri-user-settings-line',
       to: '/account-settings',
     }"
@@ -86,13 +86,6 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
       title: 'Login',
       icon: 'ri-login-box-line',
       to: '/login',
-    }"
-  />
-  <VerticalNavLink
-    :item="{
-      title: 'Register',
-      icon: 'ri-user-add-line',
-      to: '/register',
     }"
   />
   <VerticalNavLink
