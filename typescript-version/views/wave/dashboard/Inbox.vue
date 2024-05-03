@@ -7,47 +7,68 @@ const headers = [
 const todos = [
   {
     id: 'rezept',
-    title: 'keine neuen Rezepte',
+    count: 2,
+    singular: 'ein neues Rezept',
+    plural: 'Rezepte',
     icon: 'ri-receipt-fill',
     color: 'primary',
     link: '/website',
   },
   {
     id: 'bestellung',
-    title: 'keine neunen Bestellungen',
+    count: 6,
+    singular: 'eine neue Bestellung',
+    plural: 'Bestellungen',
     icon: 'ri-shopping-cart-2-fill',
     color: 'primary',
     link: '/eshop',
   },
   {
     id: 'beratungsanfrage',
-    title: 'keine neunen Beratungsanfragen',
+    count: 1,
+    singular: 'eine neue Beratungsanfrage',
+    plural: 'Beratungsanfragen',
     icon: 'ri-question-answer-fill',
     color: 'primary',
     link: '/newsletter',
   },
   {
     id: 'kontaktanfrage',
-    title: 'keine neuen Kontaktanfragen',
+    count: 1,
+    singular: 'eine neue Kontaktanfrage',
+    plural: 'Kontaktanfragen',
     icon: 'ri-message-fill',
     color: 'primary',
   },
   {
     id: 'chat',
-    title: 'keine neuen Chat-Nachrichten',
+    count: 0,
+    singular: 'eine neue Chat-Nachricht',
+    plural: 'Chat-Nachrichten',
     icon: 'ri-chat-4-fill',
     color: 'primary',
   },
   {
     id: 'telepharmazie',
-    title: 'keine neuen Telepharmazie-Beratungsanfragen',
+    count: 2,
+    singular: 'eine neuen Telepharmazie-Beratungsanfrage',
+    plural: 'Telepharmazie-Beratungsanfragen',
     icon: 'ri-video-chat-fill',
     color: 'primary',
   },
 ]
 
+const totalTodos = computed(() => {
+  return todos.reduce((acc, todo) => acc + todo.count, 0)
+});
+
+const getItemColor = (count) => {
+  return count === 0 ? 'success' : 'warning'
+};
+
+
+
 const applyRowColor = ({ index }: { index: number }) => {
-  console.log(index)
   return index % 2 === 1 ? 'bg-color-primary' : ''
 }
 </script>
@@ -60,11 +81,10 @@ const applyRowColor = ({ index }: { index: number }) => {
       <template #append>
         <div class="me-n3">
           <VChip
-            color="success"
+            :color="getItemColor(totalTodos)"
             size="small"
-            class="text-capitalize"
           >
-            keine offenen Aufgaben
+            {{ totalTodos === 0 ? 'Keine offenen Aufgaben' : totalTodos === 1 ? 'Eine offene Aufgabe' : totalTodos + ' offene Aufgaben' }}
           </VChip>
         </div>
       </template>
@@ -81,13 +101,28 @@ const applyRowColor = ({ index }: { index: number }) => {
         <template #headers />
         <template #bottom />
 
+        <template #item.title="{ item }">
+
+          <span>
+            {{ item.count === 0 ? 'keine offenen ' + item.plural : item.count === 1 ? item.singular : item.count + ' offene ' + item.plural }}
+          </span>
+
+        </template>
+
         <template #item.icon="{ item }">
-          <div class="align-center">
+          <div class="position-relative">
             <VIcon
               size="28"
               :icon="item.icon"
-              :color="item.color"
+              :color="getItemColor(item.count)"
             />
+            <VChip
+              :color="getItemColor(item.count)"
+              size="small"
+              class="position-absolute top-0 end-0 ml-n3 mt-n2 z-index-1"
+            >
+              {{ item.count }}
+            </VChip>
           </div>
         </template>
       </VDataTable>
