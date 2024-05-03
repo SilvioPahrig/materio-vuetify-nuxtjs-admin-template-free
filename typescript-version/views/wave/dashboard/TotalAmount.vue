@@ -1,44 +1,30 @@
 <script setup lang="ts">
 import {useTheme} from 'vuetify'
-import {hexToRgb} from '@layouts/utils'
+import { defineProps } from 'vue'
 
-let data = []
-let daysInThePast = 30
-
-for (let i = 0; i < daysInThePast; i++) {
-  let date = new Date(Date.now() - i * 24 * 60 * 60 * 1000)
-  let formattedDate = `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth() + 1).padStart(2, '0')}.`
-
-  let orderCount = Math.floor(Math.random() * 15) + 4
-  let totalAmount = 0
-  for (let j = 0; j < orderCount; j++) {
-    totalAmount += Math.floor(Math.random() * 88) + 8
+const props = defineProps({
+  data: {
+    type: Array,
+    required: true,
   }
-  data.push({
-    'date': formattedDate,
-    'orderCount': orderCount, // Ersetzen Sie dies durch die tatsächlichen Daten
-    'totalAmount': totalAmount, // Ersetzen Sie dies durch die tatsächlichen Daten
-  })
-}
+})
 
-data = data.reverse();
+const { data } = toRefs(props)
 
 const vuetifyTheme = useTheme()
-
-const series = [
+const OrderSeries = [
   {
     name: 'Umsatz',
-    data: data.map((item) => item.totalAmount),
+    data: data.value.map((item) => item.totalAmount),
   },
   {
     name: 'Bestllungen',
-    data: data.map((item) => item.orderCount),
+    data: data.value.map((item) => item.orderCount),
   },
 ]
 
-const chartOptions = computed(() => {
+const orderChartOptions = computed(() => {
   const currentTheme = vuetifyTheme.current.value.colors
-
   return {
     chart: {
       id: 'vuechart-example',
@@ -48,7 +34,7 @@ const chartOptions = computed(() => {
       currentTheme.warning,
     ],
     xaxis: {
-      categories: data.map((item) => item.date),
+      categories: data.value.map((item) => item.date),
     },
     yaxis: [
       {
@@ -167,8 +153,8 @@ const chartOptions = computed(() => {
             <VCardText>
               <VueApexCharts
                 type="line"
-                :options="chartOptions"
-                :series="series"
+                :options="orderChartOptions"
+                :series="OrderSeries"
                 :height="240"
                 class="my-1"
               />
