@@ -144,8 +144,6 @@ const parseRSSFeed = (feed) => {
 onMounted(() => {
   const rssfeed = getRSSFeed()
   newsItems.value = parseRSSFeed(rssfeed);
-  console.log(newsItems.value)
-
 })
 </script>
 

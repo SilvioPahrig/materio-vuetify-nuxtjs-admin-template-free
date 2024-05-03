@@ -2,12 +2,16 @@
 import BookedServices from "@/views/wave/dashboard/BookedServices.vue";
 import Inbox from "@/views/wave/dashboard/Inbox.vue";
 import DazNews from "@/views/wave/dashboard/DazNews.vue";
+import TotalAmount from "@/views/wave/dashboard/TotalAmount.vue";
 </script>
 
 <template>
   <VRow class="match-height">
     <VCol cols="12">
       <BookedServices />
+    </VCol>
+    <VCol cols="12">
+      <TotalAmount />
     </VCol>
     <VCol cols="12">
       <Inbox />
