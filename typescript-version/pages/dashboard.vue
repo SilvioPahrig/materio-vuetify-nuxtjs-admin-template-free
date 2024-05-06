@@ -5,6 +5,7 @@ import DazNews from '@/views/wave/dashboard/DazNews.vue'
 import TotalAmount from '@/views/wave/dashboard/TotalAmount.vue'
 import TotalUser from '@/views/wave/dashboard/TotalUser.vue'
 import OrderByShipping from '@/views/wave/dashboard/OrderByShipping.vue'
+import MeetBannerSmall from "@images/wave/meet-wave-banner.jpg";
 
 const data = []
 const daysInThePast = 30
@@ -39,11 +40,27 @@ data.reverse()
     </VCol>
     <TotalUser :data="data"/>
     <OrderByShipping :data="data"/>
-    <VCol cols="12">
+    <VCol cols="6">
       <Inbox />
     </VCol>
+    <VCol cols="6">
+      <VCard>
+        <VCardItem>
+        <VCardTitle>CardLink: der aktuelle Stand im MEET WAVE-Webinar</VCardTitle>
+          </VCardItem>
+          <VCardText>
+          <VImg :src=MeetBannerSmall alt="Meet Wave Banner" />
+        </VCardText>
+      </VCard>
+    </VCol>
     <VCol cols="12">
-      <DazNews />
+      <VCard>
+        <VCardItem>
+        <VCardTitle>Neueste Nachrichten (DAZ)</VCardTitle></VCardItem>
+        <VCardText>
+          <DazNews />
+        </VCardText>
+      </VCard>
     </VCol>
   </VRow>
 </template>

@@ -59,7 +59,9 @@ const chartOptions = computed(() => {
 <template>
   <VCol cols="12" md="4"> <!-- Hier wird die Breite für kleine Bildschirme (md="8") auf 2/3 der Breite gesetzt -->
     <VCard>
+      <VCardItem>
       <VCardTitle>Bestellungen nach Versandtyp</VCardTitle>
+      </VCardItem>
       <VCardText>
         <VueApexCharts
           type="pie"

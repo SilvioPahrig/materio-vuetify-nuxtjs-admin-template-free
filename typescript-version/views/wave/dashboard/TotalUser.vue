@@ -40,7 +40,8 @@ const visitorChartOptions = computed(() => {
 <template>
   <VCol cols="12" md="8"> <!-- Hier wird die Breite für kleine Bildschirme (md="8") auf 2/3 der Breite gesetzt -->
     <VCard>
-      <VCardTitle>Seitenaufrufe der letzten 30 Tage</VCardTitle>
+      <VCardItem>
+      <VCardTitle>Seitenaufrufe der letzten 30 Tage</VCardTitle></VCardItem>
       <VCardText>
         <VueApexCharts
           type="bar"
