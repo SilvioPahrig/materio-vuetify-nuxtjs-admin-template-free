@@ -11,8 +11,6 @@ const props = defineProps({
 
 const {data} = toRefs(props)
 const totalOrders = computed(() => {
-  console.log(data.value)
-  console.log('----info----')
   if (Array.isArray(data.value)) {
     return data.value.reduce((sum, item) => sum + item.orderCount, 0)
   }

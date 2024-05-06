@@ -49,6 +49,7 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
       icon: 'ri-file-search-line',
       to: '/pinboard',
       badgeClass: '',
+      disable: true,
     }"
   />
 
@@ -74,42 +75,49 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
     :item="{
         title: 'Newsletter',
         icon: 'ri-mail-line',
+        disable: true,
       }"
   />
   <VerticalNavLink
     :item="{
         title: 'Chat',
         icon: 'ri-message-2-line',
+        to: '/chat',
       }"
   />
   <VerticalNavLink
     :item="{
         title: 'Impfzentrum',
         icon: 'ri-syringe-line',
+        to: '/vaccination-center',
       }"
   />
   <VerticalNavLink
     :item="{
         title: 'Aktionen / Events',
         icon: 'ri-calendar-event-line',
+        disable: true,
       }"
   />
   <VerticalNavLink
     :item="{
         title: 'Telepharmazie',
         icon: 'ri-live-line',
+        disable: true,
       }"
   />
   <VerticalNavLink
     :item="{
         title: 'Stellenangebote',
         icon: 'ri-news-line',
+        disable: true,
       }"
   />
   <VerticalNavLink
     :item="{
         title: 'Care',
         icon: 'ri-wheelchair-line',
+        disable: true,
       }"
   />
 
