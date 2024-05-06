@@ -71,6 +71,8 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
         title: 'Website',
         icon: 'ri-macbook-line',
         to: '/website',
+        badgeClass: 'bg-error',
+        badgeContent: '3',
       }"
   />
   <VerticalNavLink
@@ -85,6 +87,8 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
         title: 'Chat',
         icon: 'ri-message-2-line',
         to: '/chat',
+        badgeClass: 'bg-error',
+        badgeContent: '2',
       }"
   />
   <VerticalNavLink

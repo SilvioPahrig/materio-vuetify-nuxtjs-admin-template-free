@@ -42,7 +42,7 @@ const todos = [
   },
   {
     id: 'chat',
-    count: 0,
+    count: 2,
     singular: 'eine neue Chat-Nachricht',
     plural: 'Chat-Nachrichten',
     icon: 'ri-chat-4-fill',
