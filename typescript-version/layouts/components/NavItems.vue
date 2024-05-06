@@ -66,15 +66,36 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
         to: '/shop',
       }"
   />
-  <VerticalNavLink
+  <VerticalNavGroup
     :item="{
-        title: 'Website',
+      title: 'Website',
+      badgeContent: '3',
+      badgeClass: 'bg-error',
+      icon: 'ri-home-smile-line',
+    }"
+  >
+    <VerticalNavLink
+      :item="{
+        title: 'Übersicht',
         icon: 'ri-macbook-line',
         to: '/website',
-        badgeClass: 'bg-error',
-        badgeContent: '3',
       }"
-  />
+    />
+    <VerticalNavLink
+      :item="{
+        title: 'Startseite',
+        to: '/website-home-page',
+      }"
+    />
+    <VerticalNavLink
+      :item="{
+        title: 'Kontaktanfragen',
+        icon: 'ri-message-line',
+        badgeClass: 'bg-error',
+        badgeContent: '1',
+      }"
+    />
+  </VerticalNavGroup>
   <VerticalNavLink
     :item="{
         title: 'Newsletter',
@@ -135,12 +156,12 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
   />
 
   <!-- 👉 Dashboards -->
-    <VerticalNavLink
-      :item="{
+  <VerticalNavLink
+    :item="{
         title: 'Analytics',
         to: '/dashboard2',
       }"
-    />
+  />
 
   <VerticalNavLink
     :item="{

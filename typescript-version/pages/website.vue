@@ -45,7 +45,6 @@ const pageLinks = [
 },
 ]
 
-
 const apoLinks = [
   {
     title: 'Adresse & Kontaktdaten',
@@ -92,7 +91,7 @@ const apoLinks = [
     icon: 'ri-share-line',
     link: '/apotheke/social_media/',
   },
-];
+]
 
 const legalLinks = [
 {
@@ -115,7 +114,7 @@ const legalLinks = [
     icon: 'ri-arrow-go-back-line',
     link: '/apotheke/widerruf/',
   },
-];
+]
 
 const adminLinks = [
   {
@@ -126,6 +125,7 @@ const adminLinks = [
   },
 ]
 </script>
+
 <template>
   <VRow>
     <VCol cols="12">
