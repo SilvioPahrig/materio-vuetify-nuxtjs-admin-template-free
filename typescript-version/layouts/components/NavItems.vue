@@ -63,12 +63,14 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
     :item="{
         title: 'Shop',
         icon: 'ri-shopping-cart-2-line',
+        to: '/shop',
       }"
   />
   <VerticalNavLink
     :item="{
         title: 'Website',
         icon: 'ri-macbook-line',
+        to: '/website',
       }"
   />
   <VerticalNavLink
