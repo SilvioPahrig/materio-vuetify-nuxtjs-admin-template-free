@@ -10,28 +10,31 @@ const statistics = [
     title: 'eShop',
     icon: 'ri-shopping-cart-2-line',
     color: 'primary',
-    link: '/eshop',
+    link: '/shop',
   },
   {
     title: 'Newsletter',
     icon: 'ri-mail-line',
     color: 'primary',
-    link: '/newsletter',
+    link: '/dashboard',
   },
   {
     title: 'Chat',
     icon: 'ri-message-2-line',
     color: 'primary',
+    link: '/chat',
   },
   {
     title: 'Impfzentrum',
     icon: 'ri-syringe-line',
     color: 'primary',
+    link: '/vaccination-center',
   },
   {
     title: 'Telepharmazie Free',
     icon: 'ri-live-line',
     color: 'primary',
+    link: '/dashboard',
   },
 ]
 </script>
@@ -49,24 +52,27 @@ const statistics = [
           lg="2"
         >
           <div class="d-flex flex-column align-center justify-center">
+            <router-link :to="item.link">
             <VAvatar
               :color="item.color"
               rounded
-              size="40"
+              size="72"
               class="elevation-1"
             >
               <VIcon
-                size="24"
+                size="48"
                 :icon="item.icon"
               />
 
             </VAvatar>
+            </router-link>
 
-            <div class="text-center">
+            <div class="text-center pa-3">
               <div class="text-body-1">
                 {{ item.title }}
               </div>
             </div>
+
           </div>
         </VCol>
       </VRow>
