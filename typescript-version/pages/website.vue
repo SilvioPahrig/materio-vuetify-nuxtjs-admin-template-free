@@ -124,12 +124,48 @@ const adminLinks = [
     color: 'error',
   },
 ]
+
+
+const mainLinks = [
+  {
+    title: 'Meine Webseite',
+    icon: 'ri-macbook-line',
+    color: 'info',
+    link: 'https://apo2u.com/rosf/website/',
+    external: true,
+  },
+  {
+    title: 'Kontaktanfrage',
+    icon: 'ri-message-line',
+    color: 'primary',
+    badgeContent: '1',
+  },
+  {
+    title: 'Chat',
+    icon: 'ri-message-2-line',
+    color: 'primary',
+    link: '/chat',
+    badgeContent: '2',
+  },
+]
+
 </script>
 
 <template>
   <VRow>
     <VCol cols="12">
-      <Links />
+      <VCard>
+        <VCardItem>
+          <VCardTitle>Meine Website</VCardTitle>
+        </VCardItem>
+      </VCard>
+    </VCol>
+    <VCol cols="12">
+      <VCard>
+        <VCardText class="pt-4">
+      <Links :links="mainLinks"/>
+        </VCardText>
+      </VCard>
     </VCol>
   <VCol cols="12" md="6">
     <VCard>

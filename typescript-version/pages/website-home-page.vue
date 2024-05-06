@@ -2,7 +2,9 @@
   <VRow>
     <VCol cols="12">
       <VCard>
+<VCardItem>
         <VCardTitle>Startseite</VCardTitle>
+  </VCardItem>
         <VCardSubtitle>Wählen Sie die gewünschten Elemente für Ihre Startseite aus.</VCardSubtitle>
         <VCardText>
           <WebsiteItem v-for="(item, index) in websiteItems" :key="index" :id="item.id" :title="item.title" :editable="item.editable" :configable="item.configable" />
