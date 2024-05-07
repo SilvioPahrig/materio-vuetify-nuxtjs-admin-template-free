@@ -104,7 +104,6 @@ const adminLinks = [
   },
 ]
 
-
 const mainLinks = [
   {
     title: 'Meine Webseite',

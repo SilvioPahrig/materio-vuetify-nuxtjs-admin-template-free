@@ -1,45 +1,53 @@
 <template>
-  <div class="d-flex justify-space-between">
-    <label class="d-flex align-center">
-      <VCheckbox v-model="isChecked" class="ml-2"></VCheckbox>
-      <span class="font-weight-bold">{{ title }}</span>
-    </label>
+  <div :id="'item-' + item.id" class="outer-wrapper" @mouseover="isHovered = true" @mouseleave="isHovered = false">
+    <div class="d-flex justify-space-between" :class="{ 'hovered': isHovered }">
+      <label class="d-flex align-center">
+        <VCheckbox v-model="selected" @change="updateSelection" class="ml-2"></VCheckbox><span class="font-weight-bold">{{ item.title }}</span>
+      </label>
 
-    <div class="d-flex align-center">
-      <VIcon v-if="editable">ri-pencil-line</VIcon>
-      <VIcon v-if="configable">ri-settings-3-line</VIcon>
-      <VIcon v-else></VIcon>
-      <VDivider class="ml-3 mr-2" :thickness="2" vertical/>
-      <VIcon>ri-arrow-down-s-line</VIcon>
-      <VIcon>ri-arrow-up-s-line</VIcon>
+      <div class="d-flex align-center">
+        <VIcon v-if="item.editable">ri-pencil-line</VIcon>
+        <VIcon v-if="item.configable">ri-settings-3-line</VIcon>
+        <VIcon v-else></VIcon>
+        <VDivider class="ml-3 mr-2" :thickness="2" vertical/>
+        <VIcon>ri-arrow-down-s-line</VIcon>
+        <VIcon>ri-arrow-up-s-line</VIcon>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   props: {
-    id: {
-      type: Number,
+    item: {
+      type: Object,
       required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    configable: {
-      type: Boolean,
-      default: true,
-    },
-    editable: {
-      type: Boolean,
-      default: true,
     },
   },
   data() {
     return {
-      isChecked: false,
+      isHovered: false,
+      selected: this.item.selected,
     }
   },
-}
+  methods: {
+    updateSelection(newValue) {
+      this.localItem.selected = newValue;
+      this.$emit('update:item', this.localItem);
+    },
+  },
+});
 </script>
+
+<style scoped>
+.outer-wrapper {
+  cursor: pointer; /* So dass der Cursor seine Form ändert, wenn er über das Element schwebt */
+}
+
+.outer-wrapper .hovered {
+  background-color: #ccc; /* Grauer Hintergrund beim Schweben über das Element */
+}
+</style>
