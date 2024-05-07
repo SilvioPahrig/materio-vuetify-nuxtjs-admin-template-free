@@ -93,6 +93,7 @@ import serviceIcon from '@images/wave/customer-service-72.svg?raw'
         icon: 'ri-message-line',
         badgeClass: 'bg-error',
         badgeContent: '1',
+        disable: true,
       }"
     />
   </VerticalNavGroup>

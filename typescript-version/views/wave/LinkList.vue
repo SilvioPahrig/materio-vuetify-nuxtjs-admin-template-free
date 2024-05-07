@@ -22,20 +22,28 @@ const headers = [
     class="text-no-wrap todos-table"
     :headers="headers"
   >
-    <template #headers/>
-    <template #bottom/>
+    <template #headers />
+    <template #bottom />
 
     <template #item.title="{ item }">
-      <RouterLink to="/dashboard">
-
+      <RouterLink v-if="item.to" :to=item.to>
         <VIcon
           size="28"
           style="margin-right: 30px;"
           :icon="item.icon"
           :color="item.color ? item.color : secondary"
         />
-        <span :class="'text-' + item.color">{{ item.title }}</span> <!-- Hier wird die Farbe aus item.color verwendet, falls vorhanden -->
+        <span :class="'text-' + item.color">{{ item.title }}</span>
       </RouterLink>
+      <div v-else class="nav-link">
+        <VIcon
+          size="28"
+          style="margin-right: 30px;"
+          :icon="item.icon"
+          :color="item.color ? item.color : secondary"
+        />
+        <span :class="'text-' + item.color">{{ item.title }}</span>
+      </div>
     </template>
   </VDataTable>
 </template>

@@ -5,136 +5,116 @@ import LinkList from "@/views/wave/LinkList.vue";
 const productLinks = [
   {
     title: 'Angebote, Preise & Bestände',
-    icon: 'ri-euro-symbol-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/produkte/',
-
+    icon: 'ri-money-euro-circle-line',
   },
   {
     title: 'Werbung mit Angebotspreisen',
-    icon: 'ri-percent-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/streichpreise/',
+    icon: 'ri-discount-percent-line',
 
   },
   {
     title: 'Depotverträge',
-    icon: 'ri-assignment-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/einstellungen_allgemein/#href_depot',
+    icon: 'ri-contract-line',
 
   },
   {
     title: 'Eigene Produkte',
-    icon: 'ri-insert-photo-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/produkte_apotheke/',
+    icon: 'ri-image-fill',
 
   },
   {
     title: 'Eigene Kategorien',
-    icon: 'ri-view-list-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/kategorien_apotheke/',
+    icon: 'ri-list-check',
 
   },
   {
     title: 'Gutscheine & Rabatte',
-    icon: 'ri-card-giftcard-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/gutscheine/',
+    icon: 'ri-gift-line',
 
   },
   {
     title: 'Grundkalkulation eShop',
-    icon: 'ri-insert-chart-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/einstellungen_allgemein/#href_kalkulation',
+    icon: 'ri-bar-chart-box-line',
 
   },
   {
     title: 'Maximale Bestellmenge',
-    icon: 'ri-vertical-align-top-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/einstellungen_allgemein/#href_maxbestell',
+    icon: 'ri-skip-up-line',
 
   },
   {
     title: 'Uploads',
-    icon: 'ri-cloud-upload-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/uploads/',
+    icon: 'ri-upload-cloud-2-line',
 
   },
   {
     title: 'Preisvergleiche',
-    icon: 'ri-compare-arrows-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/preisvergleiche/',
-  }
+    icon: 'ri-arrow-left-right-line',
+  },
 ]
 
 const configLinks = [
   {
     title: 'Reservierung/Abholung',
-    icon: 'ri-transfer-within-a-station-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/einstellungen_reservierung/',
+    icon: 'ri-walk-line',
   },
   {
     title: 'Botendienst',
-    icon: 'ri-directions-car-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/einstellungen_botendienst/',
+    icon: 'ri-car-line',
   },
   {
     title: 'Versand',
-    icon: 'ri-local-shipping-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/einstellungen_versand/',
+    icon: 'ri-truck-line',
   },
   {
     title: 'Filialen',
-    icon: 'ri-place-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/einstellungen_filialen/',
+    icon: 'ri-map-pin-line',
   },
   {
     title: 'Großhandels-Anbindung',
-    icon: 'ri-business-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/einstellungen_allgemein/#href_ghanbindung',
+    icon: 'ri-building-line',
   },
   {
     title: 'Rechnungslayout anpassen',
-    icon: 'ri-text-rotate-vertical-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/einstellungen_rechnungslayout/',
+    icon: 'ri-edit-box-line',
   },
   {
     title: 'Warenwirtschaft anbinden',
-    icon: 'ri-warehouse-line',
-    link: 'https://www.wave-cockpit.de/reservierungsshop/einstellungen_warenwirtschaft/',
+    icon: 'ri-bank-line',
   },
   {
     title: 'Startseite',
-    icon: 'ri-home-line',
-    link: 'https://www.wave-cockpit.de/website/inhalte/',
+    icon: 'ri-home-4-line',
   },
 ]
 
 const legalLinks = [
   {
     title: 'AGB',
-    icon: 'ri-file-list-3-line',
-    link: '/apotheke/agb/',
+    icon: 'ri-survey-line',
   },
   {
     title: 'Datenschutz',
-    icon: 'ri-shield-user-line',
-    link: '/apotheke/datenschutz/',
+    icon: 'ri-shield-check-line',
   },
   {
     title: 'Impressum',
     icon: 'ri-information-line',
-    link: '/apotheke/impressum/',
   },
   {
     title: 'Widerruf',
     icon: 'ri-arrow-go-back-line',
-    link: '/apotheke/widerruf/',
+  },
+  {
+    title: 'Archiv Bestellungen (Aufbewahrungspflicht)',
+    icon: 'ri-archive-2-line',
   },
 ]
 
 const adminLinks = [
   {
-    title: 'Website pausieren',
+    title: 'Shop pausieren',
     icon: 'ri-pause-circle-line',
-    link: '/apotheke/stop/',
     color: 'error',
   },
 ]
@@ -144,7 +124,6 @@ const mainLinks = [
     title: 'Mein Shop',
     icon: 'ri-macbook-line',
     color: 'info',
-    link: 'https://apo2u.com/rosf/',
     external: true,
   },
   {
@@ -218,6 +197,24 @@ const mainLinks = [
         <VCardSubtitle>Verwalten Sie hier die Einstellungen Ihres eShops.</VCardSubtitle>
         <VCardText>
           <LinkList :items="configLinks"/>
+        </VCardText>
+      </VCard>
+    </VCol>
+    <VCol cols="12" md="6">
+      <VCard>
+        <VCardTitle>Rechtliches</VCardTitle>
+        <VCardSubtitle>Alle rechtlich relevanten Informationen auf einem Blick.</VCardSubtitle>
+        <VCardText>
+          <LinkList :items="legalLinks"/>
+        </VCardText>
+      </VCard>
+    </VCol>
+    <VCol cols="12" md="6">
+      <VCard>
+        <VCardTitle>Admin Einstellungen</VCardTitle>
+        <VCardSubtitle>Verwalten Sie Ihren eShop.</VCardSubtitle>
+        <VCardText>
+          <LinkList :items="adminLinks"/>
         </VCardText>
       </VCard>
     </VCol>
