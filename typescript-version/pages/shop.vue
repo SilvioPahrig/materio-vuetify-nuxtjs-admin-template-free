@@ -124,6 +124,7 @@ const mainLinks = [
     title: 'Mein Shop',
     icon: 'ri-macbook-line',
     color: 'info',
+    link: 'https://fancy-sprinkles-7a5789.netlify.app/category?0',
     external: true,
   },
   {
